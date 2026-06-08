@@ -74,10 +74,38 @@ public class Main {
     }
 
     private static void searchStudent() {
-        System.out.println("Search functionality coming soon.");
+        if (studentList.isEmpty()) {
+            System.out.println("The system is currently empty. No records to search.");
+            return;
+        }
+        System.out.print("Enter Student ID to search: ");
+        String searchId = scanner.nextLine().trim();
+        boolean matchFound = false;
+
+        for (Student student : studentList) {
+            if (student.getStudentId().equalsIgnoreCase(searchId)) {
+                System.out.println("\n[Record Found]: " + student);
+                matchFound = true;
+                break;
+            }
+        }
+        if (!matchFound) {
+            System.out.println("Error: Student with ID '" + searchId + "' does not exist.");
+        }
     }
 
     private static void calculateAverage() {
-        System.out.println("Average calculation coming soon.");
+        if (studentList.isEmpty()) {
+            System.out.println("No student data available to calculate metrics.");
+            return;
+        }
+        double sum = 0;
+        for (Student student : studentList) {
+            sum += student.getMarks();
+        }
+        double average = sum / studentList.size();
+        System.out.printf("\n--- Performance Analytics ---\n");
+        System.out.printf("Total Enrolled Students: %d\n", studentList.size());
+        System.out.printf("Class Average Mark: %.2f\n", average);
     }
 }
