@@ -13,8 +13,10 @@ The Student Grade Management System is a lightweight, Java console application b
 2. Compile both Java source files simultaneously:
    ```bash
    javac Main.java
-   Student.java
-
+   javac Student.java
+3. Run the application:
+   ```bash
+   Java Main
 
 ### Sample Output
 <img width="797" height="748" alt="Out1" src="https://github.com/user-attachments/assets/874a34d1-743d-41b4-b11f-a063f82850df" />
